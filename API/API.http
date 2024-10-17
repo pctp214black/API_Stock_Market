@@ -1,0 +1,36 @@
+@API_HostAddress= http://localhost:5203/api
+
+###Get all the stocks
+GET {{API_HostAddress}}/stock
+
+###Get Stock by Id
+GET {{API_HostAddress}}/stock/1
+
+### Create a new Stock
+POST {{API_HostAddress}}/stock
+Content-Type: application/json
+
+{
+  "symbol": "AAPL",
+  "companyName": "Apple Inc.",
+  "purchase": 150,
+  "lastDiv": 0.75,
+  "industry": "Technology",
+  "marketCap": 2000000000
+}
+
+### Update a Stock
+PUT {{API_HostAddress}}/stock/3
+Content-Type: application/json
+
+{
+  "symbol": "AAPL",
+  "compamyName": "Apple Inc.",
+  "purchase": 150,
+  "lastDiv": 0.75,
+  "industry": "Technology",
+  "marketCap": 2000000000
+}
+
+### Delete a Stock
+DELETE  {{API_HostAddress}}/stock/3
