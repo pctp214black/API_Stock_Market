@@ -1,4 +1,6 @@
 using API.Data;
+using API.Interfaces;
+using API.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
@@ -12,6 +14,9 @@ builder.Services.AddDbContext<ApplicationDBContext>(opt =>
 {
     opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
+builder.Services.AddScoped<IStockRepository,StockRepository>();
+
 var app = builder.Build();
 
 
